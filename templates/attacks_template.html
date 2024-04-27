@@ -138,7 +138,7 @@
             <h1>Diagram</h1>
             {% if arguments %}
                 <img src="{{ url_for('static', filename=image_file_graph) }}" alt="Graph of Attacks">
-                <!-- <img src="{{ url_for('static', filename=image_file_histogram) }}" alt="Histogram of Defeat Degrees"> -->
+                <img src="{{ url_for('static', filename=image_file_histogram) }}" alt="Histogram of Defeat Degrees">
             {% else %}
                 <p>Unable to display the Graph and the Diagram, the argument list is empty</p>
             {% endif %}
