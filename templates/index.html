@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit a Knowledge Base with Pre-filled Forms</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">The Power of DZ</a>
+
+        <nav class="navbar">
+            <a href="/" class="active">Home</a>
+            <a href="submit_knowledge_base">Generate Your Own Base</a>
+        </nav>
+    </header>
+
+
+    <section class="main-section" id="page-main">
+        <div class="header-section ">
+            <h1 class="blue">Welcome to the main page of this site</h1>
+        </div>
+        <div class="main-section-container">
+            <p> 
+                This site offers an interface where users can, from their own set of rules, generate and analyze argumentative structures. 
+                It provides tools to generate the attacks between the arguments. Then, use the code to generate the defeats using the democratic and the weakest-link pinciples
+                and visualize the distribution of these attacks 
+                via a diagram and a histogram. Additionally, this site allows for the classification of arguments based on their "burden number," a metric 
+                calculated based on the number and weight of received attacks, thus providing an in-depth analysis of the relative strength of each argument.
+            </p>
+            <br>
+            <p>
+                Press this button to display an explanation of how to enter your rules:
+                <button type="button" onclick="generateUserGuide()">Display the user guide for this site</button>
+            </p>
+
+            <br>
+            <p>
+                Press this button to see a pre-filled form made in td:
+                <button type="button" onclick="generateForms()">Display the pre-filled form</button>
+            </p>
+            <br>
+            <p>
+                Otherwise, press this button to access the page of the site that allows you to enter your own set of rules: 
+                <button type="button" onclick="window.location.href='/submit_knowledge_base'">Fill out your own form</button>
+            </p>
+            <!-- Form to generate a pre-filled form -->
+            <form id="preFilledForm" method="post" action="/generate_attacks">
+                <div id="form">
+                    <div id="preFilledContainer">
+                        
+                    </div>
+                    <br>
+                    <input type="submit" value="Submit" id="preFilledSubmitButton" class="preFilledSubmitButton" style="display:none;">
+                    <br><br><br>
+                </div>
+            </form>
+        </div>
+
+        <div class="instructions-container" id="instructionsContainer" style="display:none;">
+            <div class="header-section">
+                <h1 class="blue">How to Enter Your Rules:</h1>
+            </div>
+            <br>
+            <br>
+            <p>
+                You have the option to establish strict or defeasible rules. Each rule consists of premises which can be literals (positive or negative) 
+                and a conclusion which is either a literal or a reference to an existing rule.
+            </p>
+
+            <br>
+            <p>
+                The first step is to specify the number of strict rules you want to generate (e.g., 2) in the first input field, 
+                then the number of defeasible rules you also want to generate (e.g., 4) in the second input field.
+            </p>
+            </p>
+            <br>
+            <h3>For strict rules:</h3>
+            <ol>
+                <li>The arrow → is used to separate premises from the conclusion.</li>
+                <li>In the premises field, you can enter zero, one, or multiple literals (e.g., <code>a</code>) as premises.</li>
+                <li>Separate each premise by a comma if you have multiple.</li>
+                <li>In the 'conclusion' field, or a reference to another rule (e.g., r1) as the conclusion.</li>
+            </ol>
+            <p><strong>Input Format:</strong> premises → conclusion</p>
+            <p><strong>Example:</strong>  → !a (where <code>a</code> is a literal)</p>
+            <p><strong>Example:</strong> a,b → d (where <code>a</code>, <code>b</code>, and <code>d</code> are literals)</p>
+
+            <br>
+            <h3>For defeasible rules:</h3>
+            <ol>
+                <li>Select the number of defeasible rules you want to enter.</li>
+                <li>The arrow ⇒ is used to separate premises from the conclusion.</li>
+                <li>As with strict rules, you can enter a literal or a reference to another rule as a premise.</li>
+                <li>Separate each premise by a comma if necessary.</li>
+                <li>In the 'conclusion' field, or a reference to another rule (e.g., r1) as the conclusion.</li>
+                <li>Enter each rule in its dedicated field, the weight of the rule (note that the weight is always a positive integer).</li>
+            </ol>
+            <p><strong>Input Format:</strong> premises ⇒ conclusion</p>
+            <p><strong>Example:</strong> a,!b ⇒ d 0 (where <code>a</code>, <code>b</code>, and <code>d</code> are literals)</p>
+            <p><strong>Example:</strong> a ⇒ r2 d 0 (where <code>a</code> is a literal and <code>r2</code> is a reference to rule <code>r2</code>)</p>
+            <p><em>Note:</em> The weight is a decimal number indicating the relative strength of the defeasible rule.</p>
+            <br>
+            <p>As you can see, literals can also be negative. To do this, simply add an exclamation point in front of them.</p>
+            </br>
+            <p>Once you have entered your rules, click the <strong>Submit</strong> button to incorporate them into your knowledge base.</p>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Codehal | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#page-main"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <script>
+        function generateForms() {
+            const container = document.getElementById('preFilledContainer');
+            const submitButton = document.getElementById('preFilledSubmitButton');
+
+            const rules = [
+                { type: 'strict', premises: [], conclusion: 'a' },
+                { type: 'strict', premises: ['b', 'd'], conclusion: 'c' },
+                { type: 'strict', premises: ['!c'], conclusion: 'd' },
+                { type: 'defeasible', premises: ['a'], conclusion: '!d', weight: '0' },
+                { type: 'defeasible', premises: [], conclusion: 'b', weight: '1' },
+                { type: 'defeasible', premises: [], conclusion: '!c', weight: '1' },
+                { type: 'defeasible', premises: [], conclusion: 'd', weight: '0' },
+                { type: 'defeasible', premises: ['c'], conclusion: 'e', weight: '0' },
+                { type: 'defeasible', premises: ['!c'], conclusion: '!r4', weight: '0' }
+            ];
+
+            container.innerHTML = '<br><br>';
+            let strictIndex = 0;
+            let defeasibleIndex = 0;
+
+            rules.forEach((rule, index) => {
+                let premisesInput = rule.premises.join(', ');
+                let namePrefix = rule.type === 'strict' ? `premises${strictIndex}` : `dPremises${defeasibleIndex}`;
+                let conclusionName = rule.type === 'strict' ? `conclusion${strictIndex}` : `dConclusion${defeasibleIndex}`;
+                let weightName = rule.type === 'defeasible' ? `dRuleWeight${defeasibleIndex}` : '';
+
+                let ruleHtml = `<p class="test">
+                    <input type="text" value="${premisesInput}" name="${namePrefix}" placeholder="Premises"> ${rule.type === 'strict' ? '⇝' : '⇒'} <input type="text" value="${rule.conclusion}" name="${conclusionName}" placeholder="Conclusion">`;
+
+                if (rule.type === 'defeasible') {
+                    ruleHtml += ` <input type="text" value="${rule.weight}" name="${weightName}" placeholder="Weight">`;
+                    defeasibleIndex++;
+                } else {
+                    strictIndex++;
+                }
+
+                ruleHtml += '</p>';
+                container.innerHTML += ruleHtml;
+            });
+
+            submitButton.style.display = "block";
+        }
+
+        function generateUserGuide() {
+            const instructionsContainer = document.getElementById('instructionsContainer');
+            instructionsContainer.style.display = "block";
+            scrollToInstructions();
+        }
+
+        function scrollToInstructions() {
+            const instructionsContainer = document.getElementById('instructionsContainer');
+            const headerHeight = 120; // Hauteur de l'en-tête en pixels
+            const scrollPosition = instructionsContainer.offsetTop - headerHeight;
+            window.scrollTo({
+                top: scrollPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+    </script>
+
+</body>
+</html>

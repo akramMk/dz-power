@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voir les Règles</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Liste des Règles</h1>
+    <ul>
+        {% for rule in rules %}
+        <li>
+		{{rule}}		
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Liste des Arguments </h1>
+    <ul>
+        {% for argument in arguments %}
+        <li>
+		{{argument}}		
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

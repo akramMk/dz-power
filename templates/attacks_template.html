@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">The Power of DZ</a>
+        <nav class="navbar">
+            <a href="/" class="active">Home</a>
+            <a href="submit_knowledge_base">Generate Your Own Base</a>
+        </nav>
+    </header>
+
+    <section class="main-section" id="page-results">
+
+
+        <div class="rules">
+            {% if rules %}
+                <h1>List of Rules Generate (Number of rules: {{ rules|length }})</h1>
+                <table>
+                    <tr>
+                        {% for rule in rules %}
+                            <td>{{ rule }}</td>
+                            {% if loop.index is divisibleby 3 %}
+                                </tr><tr> <!-- Ends the current row and starts a new one after every 2 rules -->
+                            {% endif %}
+                        {% endfor %}
+                        {% if (rules|length) is odd %}
+                            <td></td> <!-- Adds an empty cell if the number of rules is odd -->
+                        {% endif %}
+                    </tr>
+                </table>
+            {% endif %}
+        </div>
+        <br>
+        <div class="arguments">
+            <h1>List of Arguments (Number of Arguments: {{ arguments|length }})</h1>
+            {% if arguments %}
+                <table>
+                    <tr>
+                        {% for argument in arguments %}
+                            <td>{{ argument }}</td>
+                            {% if loop.index is divisibleby 2 %}
+                                </tr><tr> <!-- Ends the current row and starts a new one after every 2 arguments -->
+                            {% endif %}
+                        {% endfor %}
+                        {% if (arguments|length) is odd %}
+                            <td></td> <!-- Adds an empty cell if the number of arguments is odd -->
+                        {% endif %}
+                    </tr>
+                </table>
+            {% else %}
+                <p>The list cannot be built</p>
+            {% endif %}
+        </div>
+        <br>
+        <div class="attacks">
+            <h1>All Rebuts Attacks (Number of Rebuts Attacks: {{ rebuts_attacks|length }})</h1>
+            <br>
+            {% if rebuts_attacks %}
+                <table>
+                    <tr>
+                        <th colspan="5">All Attacks</th>
+                    </tr>
+                    <tr>
+                        {% for attacker, defender in rebuts_attacks %}
+                            <td>{{ attacker.name }} attacks {{ defender.name }}</td>
+                            {% if loop.index is divisibleby 3 %}
+                                </tr><tr> <!-- Ends the current row and starts a new one after every 5 attacks -->
+                            {% endif %}
+                        {% endfor %}
+                        {% for i in range((rebuts_attacks|length) % 3) %}
+                            <td></td> <!-- Adds empty cells if the number of attacks isn't a multiple of 5 -->
+                        {% endfor %}
+                    </tr>
+                </table>
+            {% else %}
+                <p>The list cannot be built</p>
+            {% endif %}
+
+        </div>
+        <br>
+        <div class="undercuts">
+            <h1>All Undercuts (Number of Undercuts: {{ undercuts|length }})</h1>
+            <br>
+            {% if undercuts %}
+                <table>
+                        {% for attacker, defender in undercuts %}
+                            <td>{{ attacker.name }} attacks {{ defender.name }}</td>
+                            {% if loop.index is divisibleby 5 %}
+                                </tr><tr> <!-- Ends the current row and starts a new one after every 5 attacks -->
+                            {% endif %}
+                        {% endfor %}
+                        {% for i in range((attacks|length) % 5) %}
+                            <td></td> <!-- Adds empty cells if the number of attacks isn't a multiple of 5 -->
+                        {% endfor %}
+
+                    </tr>
+                </table>
+            {% else %}
+            <p>The list cannot be built</p>
+        {% endif %}
+        </div>
+        <br>
+        <div class="defeats">
+            <h1>All deafeats</h1>
+            <p>There are <strong>{{ rebuts|length }} rebuts</strong> using the democratic and the weakest-link principles.</p>
+            <p>There are <strong>{{ undercuts|length }} undercuts</strong> using the democratic and the weakest-link principles.</p>
+            <p>There are <strong>{{ defeats|length }} defeats</strong> in total using the democratic and the weakest-link principles.</p>
+            <br>
+            {% if undercuts %}
+                <table>
+                    <tr>
+                        <th colspan="5">All Attacks</th>
+                    </tr>
+                    <tr>
+                        {% for attacker, defender in defeats %}
+                            <td>{{ attacker.name }} attacks {{ defender.name }}</td>
+                            {% if loop.index is divisibleby 5 %}
+                                </tr><tr> <!-- Ends the current row and starts a new one after every 5 attacks -->
+                            {% endif %}
+                        {% endfor %}
+                        {% for i in range((defeats|length) % 5) %}
+                            <td></td> <!-- Adds empty cells if the number of attacks isn't a multiple of 5 -->
+                        {% endfor %}
+                    </tr>
+                </table>
+                {% else %}
+                <p>The list cannot be built</p>
+            {% endif %}
+        </div>
+        <br>
+        <div class="diagram">
+            <h1>Diagram</h1>
+            {% if arguments %}
+                <img src="{{ url_for('static', filename=image_file_graph) }}" alt="Graph of Attacks">
+                <img src="{{ url_for('static', filename=image_file_histogram) }}" alt="Histogram of Defeat Degrees">
+            {% else %}
+                <p>Unable to display the Graph and the Diagram, the argument list is empty</p>
+            {% endif %}
+        </div>
+        <br>
+        <div class="burden">
+            <h1>Burden Data</h1>
+            {% if arguments %}
+                <ul>
+                    {% for arg, burden in burden %}
+                        <li><strong>{{ arg }}</strong>: {{ burden }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No Burden Data could be generated</p>
+            {% endif %}
+        </div>
+        <br>
+        <div class="preference">
+            <h1>Ranking the arguments using the burden-based semantics:</h1>
+            <p>{{ preference }}</p>
+        </div>
+        <br>
+        <br>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Codehal | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#page-results"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1421 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+*::selection {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align:center;
+    font-size: 2.5rem;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+h2 {
+    text-align:center;
+    font-size: 2.4rem;
+    color: #333;
+}
+
+
+
+input {
+    font-size: 1.4rem;
+    padding: 9px; /* Add padding inside the input for space */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Slightly round the borders */
+    font-size: 16px; /* Increase font size for better readability */
+
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Ajoutez plus de CSS selon vos besoins */
+
+html {
+    font-size: 80%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height:100vh;
+    padding: 10rem 9% 2rem;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #191d26;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+header a {
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+
+/******************************************************************/
+.title-head {
+    padding-bottom: 30px;
+}
+
+
+#formulaire {
+    display: flex;
+    flex-direction: column; /* empile les éléments verticalement */
+    align-items: center;   /* centre horizontalement dans le conteneur */
+    justify-content: center; /* centre verticalement dans le conteneur */
+    width: 100%; /* utilise toute la largeur */
+}
+
+#preFilledSubmitButton {
+    margin-top: auto; /* pousse le bouton vers le bas */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    padding-top: 30px;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+
+button {
+    padding: 12px 24px; /* Top and bottom padding, Left and right padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Text weight */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Change mouse cursor to pointer */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
+  }
+  
+
+
+.burden table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    table-layout: fixed; /* Helps in equal width of columns */
+}
+
+.burden td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid white; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+    background-color: var(--second-bg-color); /* Background color from your :root variables */
+    color: white; /* Text color */
+}
+
+/* Ensure the header is visually distinct */
+.burden h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+}
+
+/* Additional styles to enhance visual presentation */
+.burden tr:nth-child(even) td {
+    background-color: var(--bg-color); /* Alternate row background colors for better readability */
+}
+
+.burden tr:hover td {
+    background-color: var(--main-color); /* Hover effect on rows */
+    color: var(--bg-color);
+}
+
+
+
+
+
+
+/*******************************************************************************************************************************/
+.rules td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.rules table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.rules td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.rules tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.rules tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.rules h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.rules tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .rules td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+.arguments td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.arguments table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.arguments td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.arguments tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.arguments tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.arguments h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.arguments tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .arguments td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+*::selection {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align:center;
+    font-size: 2.5rem;
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+h2 {
+    text-align:center;
+    font-size: 2.4rem;
+    color: #333;
+}
+
+input {
+    font-size: 1.4rem;
+}
+
+/* Ajoutez plus de CSS selon vos besoins */
+
+html {
+    font-size: 80%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height:100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: #191d26;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
+header a {
+    font-weight: bold;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: var(--main-color);
+}
+
+
+/******************************************************************/
+.title-head {
+    padding-bottom: 30px;
+}
+
+
+#formulaire {
+    display: flex;
+    flex-direction: column; /* empile les éléments verticalement */
+    align-items: center;   /* centre horizontalement dans le conteneur */
+    justify-content: center; /* centre verticalement dans le conteneur */
+    width: 100%; /* utilise toute la largeur */
+}
+
+#preFilledSubmitButton {
+    margin-top: auto; /* pousse le bouton vers le bas */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    padding-top: 30px;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+}
+
+
+button {
+    padding: 12px 24px; /* Top and bottom padding, Left and right padding */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Text weight */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Change mouse cursor to pointer */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade for hover state */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
+  }
+
+
+
+/*******************************************************************************************************************************/
+.rules td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.rules table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.rules td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.rules tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.rules tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.rules h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.rules tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .rules td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+.arguments td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.arguments table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.arguments td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.arguments tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.arguments tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.arguments h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.arguments tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .arguments td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+.undercuts td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.undercuts table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.undercuts td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.undercuts tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.undercuts tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.undercuts h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.undercuts tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .undercuts td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+.defeats td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.defeats table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.defeats td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.defeats tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.defeats tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.defeats h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.defeats tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .defeats td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+/* This class will be used to style the diagram container */
+.diagram {
+    text-align: center; /* Centers the content */
+    margin: auto; /* Centers the block itself if needed */
+}
+
+.diagram img {
+    height: auto; /* Keeps image aspect ratio intact */
+    display: inline-block; /* Aligns the image inline with text-align center */
+    margin: 0 auto; /* Additional centering for the image specifically */
+}
+
+/* This rule ensures that both images are of the same height, adjust as necessary */
+.diagram img:not(:first-of-type) {
+    height: calc(100vw / 3); /* Example to set height relative to the width of the viewport */
+    max-height: 500px; /* Maximum height, adjust as needed */
+}
+
+/* If the images should be of a specific width, you can add a max-width rule */
+.diagram img:not(:first-of-type) {
+    max-width: 500px; /* Maximum width, adjust as needed */
+}
+
+
+.preFilledSubmitButton {
+    padding: 12px 24px; /* Top and bottom padding, left and right padding */
+    background-color: #0e76a8; /* A nice shade of blue, change as you wish */
+    color: white; /* Text color */
+    border: none; /* No border for a modern look */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 1rem; /* Reasonable text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text for a more 'button-like' appearance */
+    cursor: pointer; /* Changes the cursor to indicate that it's clickable */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* A subtle shadow to make the button 'pop' */
+    display: inline-block; /* To center the button in its container, if needed */
+    margin: 0 auto; /* Central alignment if the display is changed to block */
+    font-size: 1.5rem;
+}
+
+.preFilledSubmitButton:hover {
+    background-color: #055c87; /* Darker shade of the button color for hover state */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly more pronounced shadow on hover */
+}
+
+/* Style for each row in your form, if they have class 'filled-form' */
+.filled-form {
+    width: 100%; /* or max-width if you want them to be narrower */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    flex-wrap: wrap; /* Wrap the children if not enough horizontal space */
+}
+
+/* Style for paragraph inside 'filled-form' if they have class 'test' */
+.test {
+    flex: 1; /* Each child flex item takes up equal space */
+    margin: 10px; /* Optional: adds space between the form items */
+}
+
+/* Inputs inside each '.filled-form' */
+.filled-form input {
+    flex: 1; /* Each input takes up equal space */
+    margin: 0 10px; /* Optional: adds space between the inputs */
+}
+
+/* Specific styles for the submit button */
+#preFilledSubmitButton {
+    /* Your specific styles for the submit button */
+    display: block; /* Shows the button as a block element */
+    margin: 20px auto; /* Auto margin for horizontal centering */
+}
+
+.diagram img {
+    height: 500px; /* Keeps the aspect ratio of the images */
+    display: inline-block; /* Aligns images in a line */
+    margin: 1%; /* Adds a small margin between the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for some depth */
+}
+
+
+
+.burden {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 5px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.burden h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.burden ul {
+    list-style-type: none; /* removes default list styling */
+    padding: 0;
+}
+
+.burden li {
+    text-align: center;
+
+    background-color: #34495e; /* slightly different shade for the list items */
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    word-wrap: break-word; /* ensures long strings wrap and don't overflow */
+    white-space: pre-wrap; /* maintains spaces and line breaks as in source code */
+    font-size: 1.5rem; /* smaller font size to fit more content */
+}
+
+.preference{
+    text-align: center;
+}
+
+.title-results h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+    border: 2px solid var(--border-color);
+    padding: 10px; /* Optionnel : ajout de marge à l'intérieur de la bordure */
+    text-decoration: underline;
+}
+
+.title-results h1:hover {
+    text-decoration: none;
+}
+
+
+
+
+.defeats th, .defeats td {
+    border: 1px solid white; /* Set border color to white */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Zebra striping for rows */
+.defeats tr:nth-child(even) {
+    background-color:black;
+}
+
+/* Hover effect for rows */
+.defeats tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+/* Autres styles ... */
+
+.defeats table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.defeats th, .defeats td {
+    text-align: center;      /* Centre le texte horizontalement */
+    vertical-align: middle;  /* Centre le texte verticalement */
+    border: 1px solid white; /* Bordures blanches */
+    padding: 8px;            /* Ajustez le padding selon vos besoins */
+}
+
+/* Zébrure pour les lignes du tableau */
+.defeats tr:nth-child(even) {
+    background-color: #323946; /* Couleur d'arrière-plan pour les lignes paires */
+}
+
+/* Effet au survol pour les lignes */
+.defeats tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+.rules {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.arguments {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.attacks {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.undercuts {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.defeats {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.diagram {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 700px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.preference {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 700px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+
+.attacks table {
+    width: 100%;
+    border-collapse: collapse;
+    /* If you want the outer border of the table to be white as well */
+    text-align: center;
+    border: 1px solid white; 
+}
+
+.attacks th[colspan="5"] {
+    text-align: center;      /* Center align text horizontally */
+    vertical-align: middle;  /* Center align text vertically */
+    background-color: rgb(20, 20, 20);
+    color: whitesmoke;
+}
+
+.attacks th[colspan="5"]:hover {
+    color:rgb(0, 204, 255); 
+}
+
+.attacks th, .attacks td {
+    text-align: center;      /* Center text horizontally */
+    vertical-align: middle;  /* Center text vertically */
+    border: 1px solid white; /* If you want white borders */
+    padding: 8px;            /* Adjust padding as needed */
+    /* Additional styling can be added here */
+}
+
+
+
+
+
+.attacks th, .attacks td {
+    border: 1px solid white; /* Set border color to white */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Zebra striping for rows */
+.attacks tr:nth-child(even) {
+    background-color:black;
+}
+
+/* Hover effect for rows */
+.attacks tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+/* Autres styles ... */
+
+.attacks table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attacks th, .attacks td {
+    text-align: center;      /* Centre le texte horizontalement */
+    vertical-align: middle;  /* Centre le texte verticalement */
+    border: 1px solid white; /* Bordures blanches */
+    padding: 8px;            /* Ajustez le padding selon vos besoins */
+}
+
+/* Zébrure pour les lignes du tableau */
+.attacks tr:nth-child(even) {
+    background-color: #323946; /* Couleur d'arrière-plan pour les lignes paires */
+}
+
+/* Effet au survol pour les lignes */
+.attacks tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+/*******************************************************************************************************************************/
+
+.undercuts td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.undercuts table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.undercuts td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.undercuts tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.undercuts tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.undercuts h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.undercuts tr:hover {
+    background-color: #0ef; /* Main color for hover effect */
+    color: #1f242d; /* Dark text color for better contrast */
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .undercuts td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+.defeats td:hover {
+    background-color: var(--main-color); /* Adds a hover effect for table cells */
+    color: var(--bg-color);
+}
+.defeats table {
+    width: 100%; /* Set table width to take full container width */
+    border-collapse: collapse; /* Ensures borders of cells are merged nicely */
+    color: white; /* Text color for the table */
+}
+
+.defeats td {
+    text-align: center; /* Center text horizontally */
+    vertical-align: middle; /* Center text vertically */
+    border: 1px solid #ffffff; /* White borders for cells */
+    padding: 8px; /* Padding inside cells for better text display */
+}
+
+/* Zebra striping for rows to enhance readability, alternating based on even and odd */
+.defeats tr:nth-child(odd) {
+    background-color: #1f242d; /* Darker background for odd rows */
+}
+
+.defeats tr:nth-child(even) {
+    background-color: #323946; /* Lighter background for even rows */
+}
+
+/* Ensure the header is visually distinct */
+.defeats h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Space between the title and the table */
+    padding: 5px 0; /* Padding on top and bottom of the title */
+}
+
+/* Hover effect on rows to improve interactivity */
+.defeats tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+/* Responsive design considerations, ensuring it works well on smaller screens */
+@media (max-width: 600px) {
+    .defeats td {
+        font-size: smaller; /* Smaller text on smaller screens */
+    }
+}
+/*******************************************************************************************************************************/
+
+
+
+
+
+
+/* This class will be used to style the diagram container */
+.diagram {
+    text-align: center; /* Centers the content */
+    margin: auto; /* Centers the block itself if needed */
+}
+
+.diagram img {
+    height: auto; /* Keeps image aspect ratio intact */
+    display: inline-block; /* Aligns the image inline with text-align center */
+    margin: 0 auto; /* Additional centering for the image specifically */
+}
+
+/* This rule ensures that both images are of the same height, adjust as necessary */
+.diagram img:not(:first-of-type) {
+    height: calc(100vw / 3); /* Example to set height relative to the width of the viewport */
+    max-height: 500px; /* Maximum height, adjust as needed */
+}
+
+/* If the images should be of a specific width, you can add a max-width rule */
+.diagram img:not(:first-of-type) {
+    max-width: 500px; /* Maximum width, adjust as needed */
+}
+
+
+.preFilledSubmitButton {
+    padding: 12px 24px; /* Top and bottom padding, left and right padding */
+    background-color: #0e76a8; /* A nice shade of blue, change as you wish */
+    color: white; /* Text color */
+    border: none; /* No border for a modern look */
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 1rem; /* Reasonable text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text for a more 'button-like' appearance */
+    cursor: pointer; /* Changes the cursor to indicate that it's clickable */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* A subtle shadow to make the button 'pop' */
+    display: inline-block; /* To center the button in its container, if needed */
+    margin: 0 auto; /* Central alignment if the display is changed to block */
+    font-size: 1.5rem;
+}
+
+.preFilledSubmitButton:hover {
+    background-color: #055c87; /* Darker shade of the button color for hover state */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slightly more pronounced shadow on hover */
+}
+
+.main-section-container {
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    /* Other styling as required */
+}
+
+
+
+/* Style for each row in your form, if they have class 'filled-form' */
+.filled-form {
+    width: 100%; /* or max-width if you want them to be narrower */
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    flex-wrap: wrap; /* Wrap the children if not enough horizontal space */
+}
+
+/* Style for paragraph inside 'filled-form' if they have class 'test' */
+.test {
+    flex: 1; /* Each child flex item takes up equal space */
+    margin: 10px; /* Optional: adds space between the form items */
+}
+
+/* Inputs inside each '.filled-form' */
+.filled-form input {
+    flex: 1; /* Each input takes up equal space */
+    margin: 0 10px; /* Optional: adds space between the inputs */
+}
+
+/* Specific styles for the submit button */
+#preFilledSubmitButton {
+    /* Your specific styles for the submit button */
+    display: block; /* Shows the button as a block element */
+    margin: 20px auto; /* Auto margin for horizontal centering */
+}
+
+.diagram img {
+    height: 500px; /* Keeps the aspect ratio of the images */
+    display: inline-block; /* Aligns images in a line */
+    margin: 1%; /* Adds a small margin between the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for some depth */
+}
+
+
+
+.burden {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 5px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.burden h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.burden ul {
+    list-style-type: none; /* removes default list styling */
+    padding: 0;
+}
+
+.burden li {
+    text-align: center;
+
+    background-color: #34495e; /* slightly different shade for the list items */
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    word-wrap: break-word; /* ensures long strings wrap and don't overflow */
+    white-space: pre-wrap; /* maintains spaces and line breaks as in source code */
+    font-size: 1.5rem; /* smaller font size to fit more content */
+}
+
+.preference{
+    text-align: center;
+}
+
+.title-results h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+    border: 2px solid var(--border-color);
+    padding: 10px; /* Optionnel : ajout de marge à l'intérieur de la bordure */
+    text-decoration: underline;
+}
+
+.title-results h1:hover {
+    text-decoration: none;
+}
+
+
+
+
+.defeats th, .defeats td {
+    border: 1px solid white; /* Set border color to white */
+    padding: 8px;
+    text-align: left;
+}
+
+/* Zebra striping for rows */
+.defeats tr:nth-child(even) {
+    background-color:black;
+}
+
+/* Hover effect for rows */
+.defeats tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+/* Autres styles ... */
+
+.defeats table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.defeats th, .defeats td {
+    text-align: center;      /* Centre le texte horizontalement */
+    vertical-align: middle;  /* Centre le texte verticalement */
+    border: 1px solid white; /* Bordures blanches */
+    padding: 8px;            /* Ajustez le padding selon vos besoins */
+}
+
+/* Zébrure pour les lignes du tableau */
+.defeats tr:nth-child(even) {
+    background-color: #323946; /* Couleur d'arrière-plan pour les lignes paires */
+}
+
+/* Effet au survol pour les lignes */
+.defeats tr:hover {
+    background-color:rgb(0, 204, 255);
+    color:black;
+}
+
+.rules {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.arguments {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.attacks {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.undercuts {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.defeats {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 600px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.diagram {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 7y00px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+.preference {
+    background-color: #10171d; /* or any color that fits your design */
+    color: #ecf0f1; /* ensures text is readable on the dark background */
+    padding: 1rem;
+    border-radius: 15px;
+    max-height: 700px; /* or any appropriate value */
+    overflow-y: auto; /* enables vertical scrolling */
+    margin: 1rem 0; /* adds some space around the container */
+}
+
+#instructionsContainer {
+    background-color: #10171d; /* or any color that fits your design */
+    padding: 45px;
+    border-radius: 30px;
+}
+
+
+#preFilledContainer{
+    padding: 0px;
+}
+
+.number-rules {
+    display: flex; /* Active Flexbox */
+    flex-direction: column; /* Empile les enfants verticalement */
+    align-items: space-around; /* Centre horizontalement les enfants */
+    justify-content: space-around; /* Optionnel, pour centrer verticalement si nécessaire */
+}
+
+
+
+.generate-button {
+    margin-top: 20px; /* Ajoute un peu d'espace au-dessus du bouton */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for the input fields */
+#strictRule, #defeasibleRule {
+    width: 100%; /* Make the input take up 100% of its parent's width */
+    padding: 10px; /* Add padding inside the input for space */
+    margin-bottom: 20px; /* Add space below each input */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Slightly round the borders */
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+
+footer{
+    margin-top: 50px;
+}
+
+.blue {
+    color: #0ef;
+}

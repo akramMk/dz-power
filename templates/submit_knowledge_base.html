@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Your Own Base</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="logo">The Power of DZ</a>
+
+        <nav class="navbar">
+            <a href="/" class="active">Home</a>
+            <a href="submit_knowledge_base">Generate Your Own Base</a>
+        </nav>
+    </header>
+
+
+    <section class="main-section" id="submit_knowledge_base">
+        <div class="main-section-container">
+            <div class="number-rules">
+                <div class="title-head">
+                    <h1>Submit a Knowledge Base</h1>
+                </div>
+                    <label for="strictRule">Number of strict rules:</label>
+                    <input id="strictRule" type="number" name="strictRule">
+                    <br>
+                    <label for="defeasibleRule">Number of defeasible rules:</label>
+                    <input id="defeasibleRule" type="number" name="defeasibleRule">
+                <button type="button" class="generate-button" onclick="displayFields()">Generate Fields</button>
+            </div>
+    
+
+
+            <form id="knowledgeForm" method="post" action="/generate_attacks">
+                <div id="rulesContainer"></div>
+                <input type="submit" value="Submit"class="preFilledSubmitButton" id="submitButton" style="display:none;">
+                <br>
+            </form>
+        </div>
+
+        
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2023 by Codehal | All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#submit_knowledge_base"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+
+    <script>
+        function displayFields() {
+            const strictRule = parseInt(document.getElementById('strictRule').value, 10);
+            const defeasibleRule = parseInt(document.getElementById('defeasibleRule').value, 10);
+            const container = document.getElementById('rulesContainer');
+            const submitButton = document.getElementById('submitButton');
+            container.innerHTML = '<br><br>';
+
+            if (strictRule > 0) {
+                container.innerHTML += '<p><strong>Enter all your strict rules in the form: </strong> <strong>{</strong> premises <strong>}</strong> ⇝ <strong>{</strong> conclusion <strong>}</strong> </p>';
+                container.innerHTML += '<p><strong>Example:</strong>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ⇝ \u00A0!d</p>';
+                container.innerHTML += '<p><strong>Example:</strong> a, !b ⇝ d </p>';
+                container.innerHTML += 'Make sure to respect the format<br><br>';
+                for(let i = 0; i < strictRule; i++) {
+                    container.innerHTML += '<input name="premises' + i + '" placeholder="Premises"> ⇝ <input name="conclusion' + i + '" placeholder="Conclusion" required><br><br>';
+                }
+                container.innerHTML += '<br>'
+            }
+
+            if (defeasibleRule > 0) {
+                container.innerHTML += '<p><strong>Enter all your strict rules in the form: </strong> <strong>{</strong> premises <strong>}</strong> ⇒ <strong>{</strong> conclusion <strong>}</strong> <strong>{</strong> weight <strong>}</strong> </p>';
+                container.innerHTML += '<p><strong>Example:</strong>\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 ⇝⇒\u00A0!d</p>';
+                container.innerHTML += '<p><strong>Example:</strong> a, !b ⇒ d </p>';
+                container.innerHTML += 'Make sure to respect the format<br><br>';
+                for(let i = 0; i < defeasibleRule; i++) {
+                    container.innerHTML += '<input name="dPremises' + i + '" placeholder="Premises"> ⇒ <input name="dConclusion' + i + '" placeholder="Conclusion" required> <input name="dRuleWeight' + i + '" placeholder="Weight"><br><br>';
+                }
+                                container.innerHTML += '<br><br>'
+            }
+
+            // Show the submit button only if at least one strict or defeasible rule is specified
+            submitButton.style.display = (strictRule > 0 || defeasibleRule > 0) ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
