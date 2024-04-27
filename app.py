@@ -26,7 +26,7 @@ def generate_attacks():
     all_defeats = generate_all_defeats(all_rebuts, undercuts)
 
     # Genere les graphs
-    generate_graph(all_arguments, all_defeats)
+    # generate_graph(all_arguments, all_defeats)
     generate_histogram(all_arguments, all_defeats)
 
     # Genere les burden
